@@ -1,6 +1,6 @@
 # 🚨 SmartGuard
 
-**SmartGuard** is an end-to-end system for training, deploying, and testing AI models in simulated embedded environments. Built with automation and edge deployment in mind, it demonstrates how you can use Python, TensorFlow Lite, MQTT, and CI/CD (via GitHub Actions) to replicate real-world AI-on-the-edge workflows — without needing a physical device like a Raspberry Pi or Jetson Nano.
+**SmartGuard** is an end-to-end system for training, deploying, and testing AI models in simulated embedded environments. Built with automation and edge deployment in mind, it demonstrates how you can use Python, TensorFlow Lite, MQTT, and CI/CD (via GitHub Actions) to replicate real-world AI-on-the-edge workflows same as we do on a physical device like a Raspberry Pi or Jetson Nano.
 
 ---
 
