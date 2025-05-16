@@ -1,0 +1,9 @@
+tensorflow==2.15.0
+numpy
+pandas
+matplotlib
+paho-mqtt
+pytest
+flake8
+selenium
+opencv-python
