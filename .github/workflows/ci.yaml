@@ -40,7 +40,7 @@ jobs:
 
     # Optional: Upload tflite as artifact for download from GitHub Actions UI
     - name: Upload TFLite model artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: smartguard-tflite-model
         path: models/mask_classifier.tflite
