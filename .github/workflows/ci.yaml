@@ -19,31 +19,19 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Create and activate venv, install dependencies
+    - name: Create venv and install dependencies
       run: |
         python -m venv venv
         source venv/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests
-      run: |
-        source venv/bin/activate
-        pytest tests/ --maxfail=1 --disable-warnings -q
-
-    # Optional step: convert model to tflite if you want auto build on push
-    - name: Convert to TFLite
+    - name: Convert model to TFLite
       run: |
         source venv/bin/activate
         python convert_to_tflite.py
-      # you can add conditionals here if you want to limit runs
 
-    - name: Run tests
-      run: pytest tests/
-
-    # Optional: Upload tflite as artifact for download from GitHub Actions UI
-    # - name: Upload TFLite model artifact
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: smartguard-tflite-model
-    #     path: models/mask_classifier.tflite
+    - name: Run tests (including tests for TFLite model)
+      run: |
+        source venv/bin/activate
+        pytest tests/ --maxfail=1 --disable-warnings -q
