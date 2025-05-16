@@ -15,5 +15,5 @@ def start_mqtt_broker():
 def mqtt_client():
     time.sleep(1)  # Let Docker broker fully start
     client = mqtt.Client()
-    client.connect("localhost", 1883)
+    client.connect("mosquitto", 1883)
     return client

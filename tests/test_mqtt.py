@@ -1,7 +1,7 @@
 import time
 from paho.mqtt.client import Client
 
-MQTT_BROKER_HOST = "localhost"
+MQTT_BROKER_HOST = "mosquitto"
 MQTT_BROKER_PORT = 1883
 TEST_TOPIC = "test/topic"
 TEST_MESSAGE = "yo test passed"
