@@ -2,6 +2,9 @@ import pytest
 import time
 import subprocess
 import paho.mqtt.client as mqtt
+import os
+
+BROKER = os.getenv("MQTT_BROKER", "localhost")
 
 @pytest.fixture(scope="session")
 def start_mqtt_broker():
@@ -15,5 +18,5 @@ def start_mqtt_broker():
 def mqtt_client():
     time.sleep(1)  # Let Docker broker fully start
     client = mqtt.Client()
-    client.connect("mosquitto", 1883)
+    client.connect(BROKER, 1883)
     return client

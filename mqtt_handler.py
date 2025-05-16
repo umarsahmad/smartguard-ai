@@ -1,6 +1,8 @@
 import paho.mqtt.client as mqtt
+import os
 
-BROKER = "mosquitto"
+BROKER = os.getenv("MQTT_BROKER", "localhost")
+
 PORT = 1883
 
 def create_client():
