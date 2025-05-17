@@ -9,3 +9,4 @@ flake8
 opencv-python
 scipy
 Flask==2.2.5
+Pillow

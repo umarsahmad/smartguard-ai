@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SmartGuardAI Status</title>
+    <title>SmartGuardAI - Mask Detection</title>
 </head>
 <body>
-    <h1>Status Dashboard</h1>
-    <p>{{ status }}</p>
+    <h2>Upload an Image</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+        <p>Confidence: {{ confidence | round(2) }}</p>
+    {% endif %}
 </body>
 </html>
