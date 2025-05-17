@@ -1,5 +1,5 @@
 name: SmartGuard CI
-
+give error
 on:
   push:
     branches: [main, dev]
