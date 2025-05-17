@@ -4,10 +4,10 @@ from PIL import Image
 import tensorflow as tf
 import os
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
-UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), '../static/uploads')
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '../model/mask_classifier.tflite')
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'static/uploads')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'models/mask_classifier.tflite')
 
 interpreter = tf.lite.Interpreter(model_path=MODEL_PATH)
 interpreter.allocate_tensors()
@@ -57,3 +57,7 @@ def index():
         return render_template("index.html", prediction=predicted_class, confidence=confidence)
 
     return render_template("index.html", prediction=prediction, confidence=confidence)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
