@@ -5,6 +5,7 @@ matplotlib
 paho-mqtt
 pytest
 flake8
-selenium
+# selenium
 opencv-python
 scipy
+Flask==2.2.5

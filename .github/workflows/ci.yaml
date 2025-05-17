@@ -10,16 +10,16 @@ jobs:
   test-and-build:
     runs-on: ubuntu-latest
 
-    services:
-      mosquitto:
-        image: eclipse-mosquitto:2
-        ports:
-          - 1883:1883
-        options: >-
-          --health-cmd "nc -z localhost 1883"
-          --health-interval 5s
-          --health-timeout 10s
-          --health-retries 5
+    # services:
+    #   mosquitto:
+    #     image: eclipse-mosquitto:2
+    #     ports:
+    #       - 1883:1883
+    #     options: >-
+    #       --health-cmd "nc -z localhost 1883"
+    #       --health-interval 5s
+    #       --health-timeout 10s
+    #       --health-retries 5
 
     env:
       MQTT_BROKER: localhost
